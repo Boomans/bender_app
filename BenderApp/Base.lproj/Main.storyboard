@@ -217,7 +217,7 @@
         <scene sceneID="ksb-B8-7LC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R2v-qx-r8P" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Маршруты" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Маршруты" image="MuseumIcon" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EH6-74-faM">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -235,6 +235,6 @@
     </scenes>
     <resources>
         <image name="MapIcon" width="25" height="25"/>
-        <image name="first" width="30" height="30"/>
+        <image name="MuseumIcon" width="25" height="25"/>
     </resources>
 </document>
