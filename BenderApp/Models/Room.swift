@@ -51,6 +51,17 @@ class Room {
         self.enters = enters
         self.frame = frame
     }
+    
+    func enterToRoom(id: Int) -> Enter? {
+        
+        for enter in enters {
+            if enter.to == id {
+                return enter
+            }
+        }
+        
+        return nil
+    }
 }
 
 extension Room {

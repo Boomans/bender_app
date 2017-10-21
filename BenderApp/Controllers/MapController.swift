@@ -64,37 +64,45 @@ class MapController: UIViewController {
     
     func showRoute(_ route: Route) {
         
-        // Create line
-        let line = UIBezierPath()
+        // Create route line
+        let routeLine = UIBezierPath()
         
+        var lastRoom: Room?
         for id in route.path {
             let room = RoomsManager.shared.getRoom(id: id)
-            
-            if let room = room {
-    
-                let center = room.center
-                
-                if id == route.path.first {
-                    line.move(to:center)
+
+            if let lastRoom = lastRoom {
+                if let room = room {
+                 
+                    var point = CGPoint()
+                    if let enter = lastRoom.enterToRoom(id: room.id) {
+                        point = enter.point
+                    } else {
+                        point = room.center
+                    }
+                    
+                    routeLine.addLine(to: point)
+                    routeLine.addArc(withCenter: point, radius: 0.5, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: true)
+                    
+                } else {
+                    continue
                 }
-                
-                // FIXME: Test calutation of control points
-                let controlPoint1 = CGPoint(x: center.x + routeOffsetX, y: center.y - routeOffsetY)
-                let controlPoint2 = CGPoint(x: center.x - routeOffsetX, y: center.y + routeOffsetY)
-                line.addCurve(to: room.center, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
-                
             } else {
-                continue
+                lastRoom = room
+                routeLine.move(to:(room?.center ?? CGPoint(x: 0, y: 0)))
             }
+            
+            lastRoom = room
         }
 
         // Design line in layer
         let shapeLayer = CAShapeLayer()
-        shapeLayer.path = line.cgPath
+        shapeLayer.path = routeLine.cgPath
         shapeLayer.strokeColor = UIColor.red.cgColor
         shapeLayer.fillColor = UIColor.white.withAlphaComponent(0).cgColor
-        shapeLayer.lineWidth = 4.0
+        shapeLayer.lineWidth = 3.0
         
+        // Add layer with route line
         mapView.zoomView?.layer.addSublayer(shapeLayer)
     }
     
@@ -123,4 +131,3 @@ class MapController: UIViewController {
         print("Tap in \(sender.location(in: mapView.zoomView))")
     }
 }
-
