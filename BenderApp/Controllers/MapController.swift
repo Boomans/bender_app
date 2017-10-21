@@ -14,11 +14,28 @@ class MapController: UIViewController {
     @IBOutlet var floorButtons: [FloorButton]!
     @IBOutlet weak var mapView: MapView!
     
+    var currentFloor: Int = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        selectFloorAction(floorButtons[0])
+        selectFloorAction(floorButtons[currentFloor-1])
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapOnMapAction(_:)))
+        mapView.zoomView?.isUserInteractionEnabled = true
+        mapView.zoomView?.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        showRoom(id: 11, atFloor: 1)
+        showRoom(id: 12, atFloor: 1)
+        showRoom(id: 13, atFloor: 1)
+        showRoom(id: 14, atFloor: 1)
+        showRoom(id: 15, atFloor: 1)
+        showRoom(id: 16, atFloor: 1)
     }
 
     // MARK: Map
@@ -26,6 +43,24 @@ class MapController: UIViewController {
     func loadMap(floor: Int) {
         let map = UIImage(named:"Floor\(floor)") ?? UIImage()
         mapView.display(image: map)
+    }
+    
+    func showRoom(id: Int, atFloor floor: Int) {
+        
+        let room = RoomsManager.shared.getRoom(id: id)
+        
+        if let room = room, currentFloor == floor {
+            let roomView = UIView(frame: room.frame)
+            roomView.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max),
+                                               green: CGFloat(arc4random()) / CGFloat(UInt32.max),
+                                               blue: CGFloat(arc4random()) / CGFloat(UInt32.max),
+                                               alpha: 1.0)
+            
+            mapView.zoomView?.addSubview(roomView)
+            print("Show room \(id) \(room.frame)")
+        } else {
+            print("Can't find room \(id)")
+        }
     }
     
     // MARK: Actions
@@ -41,11 +76,16 @@ class MapController: UIViewController {
             }
         }
         
-        // Update label
+        // Update floor & label
+        currentFloor = Int((sender.titleLabel?.text)!) ?? 1
         floorLabel.text = "\((sender.titleLabel?.text)!) этаж"
         
         // Load needed map
-        loadMap(floor: Int((sender.titleLabel?.text)!) ?? 1)
+        loadMap(floor: currentFloor)
+    }
+    
+    @objc func tapOnMapAction(_ sender: UITapGestureRecognizer) {
+        print("Tap in \(sender.location(in: mapView.zoomView))")
     }
 }
 

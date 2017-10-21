@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -130,7 +131,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="50"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJf-BH-TgX">
-                                        <rect key="frame" x="8" y="0.0" width="154.5" height="50"/>
+                                        <rect key="frame" x="8" y="8" width="154.5" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Эрмитаж" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0W-Dx-IX4">
                                                 <rect key="frame" x="8" y="3" width="138.5" height="36"/>
@@ -162,7 +163,7 @@
                                 <constraints>
                                     <constraint firstItem="VJf-BH-TgX" firstAttribute="leading" secondItem="4AL-TH-3xt" secondAttribute="leading" constant="8" id="GME-8w-hbz"/>
                                     <constraint firstAttribute="height" constant="50" id="dSR-NT-g9n"/>
-                                    <constraint firstItem="VJf-BH-TgX" firstAttribute="top" secondItem="4AL-TH-3xt" secondAttribute="top" id="xpL-QK-0tr"/>
+                                    <constraint firstItem="VJf-BH-TgX" firstAttribute="top" secondItem="4AL-TH-3xt" secondAttribute="top" constant="8" id="xpL-QK-0tr"/>
                                 </constraints>
                             </view>
                         </subviews>

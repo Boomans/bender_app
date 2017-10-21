@@ -27,10 +27,12 @@ class FloorButton: UIButton {
         case .selected:
             backgroundColor = UIColor(displayP3Red: 51/255, green: 102/255, blue: 102/255, alpha: 1.0)
             setTitleColor(UIColor.white, for: .normal)
+            isUserInteractionEnabled = false
             break
         case .unselected:
             backgroundColor = UIColor.white.withAlphaComponent(0)
             setTitleColor(UIColor(displayP3Red: 51/255, green: 102/255, blue: 102/255, alpha: 1.0), for: .normal)
+            isUserInteractionEnabled = true
             break
         }
     }
