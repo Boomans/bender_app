@@ -29,7 +29,9 @@ class MuseumController: UIViewController, UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) ?? UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionCell.identifier, for: indexPath) as! CategoryCollectionCell
+        
+        cell.titleLabel.text = "Итальянская керамика XV-XVIII вв."
         
         return cell
     }
