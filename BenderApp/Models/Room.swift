@@ -41,6 +41,11 @@ class Room {
     let enters: [Enter]
     let frame: CGRect
     
+    var center: CGPoint {
+        let point = CGPoint(x: frame.origin.x + frame.width/2, y: frame.origin.y + frame.height/2)
+        return point
+    }
+    
     init(id: Int, enters: [Enter], frame: CGRect) {
         self.id = id
         self.enters = enters

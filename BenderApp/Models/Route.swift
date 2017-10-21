@@ -10,7 +10,7 @@ import Foundation
 
 class Route {
 
-    typealias Path = [String]
+    typealias Path = [Int]
     
     let path: Path
     init(path: Path) {
