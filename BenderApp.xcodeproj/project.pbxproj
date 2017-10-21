@@ -13,6 +13,8 @@
 		6A0F7D161F9A2C7B00191C2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0F7D141F9A2C7B00191C2A /* Main.storyboard */; };
 		6A0F7D181F9A2C7B00191C2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A0F7D171F9A2C7B00191C2A /* Assets.xcassets */; };
 		6A0F7D1B1F9A2C7B00191C2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0F7D191F9A2C7B00191C2A /* LaunchScreen.storyboard */; };
+		6A4B39531F9C05B600A52C81 /* CollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4B39521F9C05B600A52C81 /* CollectionController.swift */; };
+		6A4B39551F9C063000A52C81 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4B39541F9C063000A52C81 /* CollectionCell.swift */; };
 		6A9846721F9AAD10002D5C64 /* FloorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9846711F9AAD0F002D5C64 /* FloorButton.swift */; };
 		6A9846741F9B0676002D5C64 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9846731F9B0676002D5C64 /* Room.swift */; };
 		6A9846771F9B1896002D5C64 /* RoomsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9846761F9B1896002D5C64 /* RoomsManager.swift */; };
@@ -36,6 +38,8 @@
 		6A0F7D171F9A2C7B00191C2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A0F7D1A1F9A2C7B00191C2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A0F7D1C1F9A2C7B00191C2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A4B39521F9C05B600A52C81 /* CollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionController.swift; sourceTree = "<group>"; };
+		6A4B39541F9C063000A52C81 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		6A9846711F9AAD0F002D5C64 /* FloorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorButton.swift; sourceTree = "<group>"; };
 		6A9846731F9B0676002D5C64 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		6A9846761F9B1896002D5C64 /* RoomsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsManager.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				6A0F7D101F9A2C7B00191C2A /* MuseumController.swift */,
+				6A4B39521F9C05B600A52C81 /* CollectionController.swift */,
 				6A0F7D121F9A2C7B00191C2A /* MapController.swift */,
 				6A98467D1F9B7186002D5C64 /* TicketController.swift */,
 			);
@@ -129,6 +134,7 @@
 				6AFF1C7A1F9A9B7C001467D9 /* MapView.swift */,
 				6A9846711F9AAD0F002D5C64 /* FloorButton.swift */,
 				6A98467F1F9BD5F5002D5C64 /* CategoryCollectionCell.swift */,
+				6A4B39541F9C063000A52C81 /* CollectionCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,12 +250,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BenderApp/Pods-BenderApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -294,6 +302,8 @@
 				6A0F7D111F9A2C7B00191C2A /* MuseumController.swift in Sources */,
 				6A9846801F9BD5F5002D5C64 /* CategoryCollectionCell.swift in Sources */,
 				6A9846951F9BEDF2002D5C64 /* NetworkManager.swift in Sources */,
+				6A4B39551F9C063000A52C81 /* CollectionCell.swift in Sources */,
+				6A4B39531F9C05B600A52C81 /* CollectionController.swift in Sources */,
 				6A98467E1F9B7186002D5C64 /* TicketController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -36,4 +36,68 @@ class NetworkManager {
             }
         }
     }
+    
+    typealias Category = (title: String, imageURL: URL)
+    
+    func getCategories(success: (([Category]) -> Void)? = nil, failure: ((Error?) -> Void)? = nil) {
+        
+        Alamofire.request("http://77.244.216.138:3000/static/info.json", method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { response in
+            
+            if let json = response.result.value, let responses = json as? [Dictionary<String, Any>] {
+                
+                var titles: [String] = []
+                var categories: [Category] = []
+                
+                for response in responses {
+                    
+                    let about = response["about"] as! Dictionary<String, Any>
+                    if let title = about["Коллекция"] as? String {
+                        
+                        let urlString = response["img"] as! String
+                        
+                        if titles.contains(title) {
+                            // ..
+                        } else if let url = URL(string: urlString) {
+                            titles.append(title)
+                            categories.append((title: title, imageURL: url))
+                        }
+                    }
+                }
+                
+                success?(categories)
+            } else {
+                failure?(nil)
+            }
+        }
+    }
+    
+    typealias Picture = (id: String, imageURL: URL)
+    
+    func getPicturesForCollection(title: String, success: (([Picture]) -> Void)? = nil, failure: ((Error?) -> Void)? = nil) {
+        
+        Alamofire.request("http://77.244.216.138:3000/static/info.json", method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { response in
+            
+            if let json = response.result.value, let responses = json as? [Dictionary<String, Any>] {
+                
+                var pictures: [Picture] = []
+                
+                for response in responses {
+                    
+                    let about = response["about"] as! Dictionary<String, Any>
+                    if let currentTitle = about["Коллекция"] as? String {
+                        let urlString = response["img"] as! String
+                        let id = about["Инвентарный_номер"] as? String
+                        
+                        if title == currentTitle, let url = URL(string: urlString), let id = id {
+                            pictures.append((id: id, imageURL: url))
+                        }
+                    }
+                }
+                
+                success?(pictures)
+            } else {
+                failure?(nil)
+            }
+        }
+    }
 }

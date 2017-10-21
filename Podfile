@@ -8,5 +8,6 @@ target 'BenderApp' do
   # Pods for BenderApp
   pod 'RealmSwift'
   pod 'Alamofire', '~> 4.5'
+  pod 'AlamofireImage', '~> 3.3'
 
 end
