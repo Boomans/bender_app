@@ -34,12 +34,7 @@ class MapController: UIViewController {
         super.viewDidAppear(animated)
         
         //showRoom(id: 11, atFloor: 1)
-        //showRoom(id: 12, atFloor: 1)
-        //showRoom(id: 13, atFloor: 1)
-        //showRoom(id: 14, atFloor: 1)
-        //showRoom(id: 15, atFloor: 1)
-        //showRoom(id: 16, atFloor: 1)
-        showRoute(Route(path: [11, 12, 13, 14, 15, 16]))
+        //showRoute(Route(path: [11, 12, 13, 15, 16]))
     }
 
     // MARK: Map
