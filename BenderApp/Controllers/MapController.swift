@@ -16,10 +16,9 @@ class MapController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        let floorMap = UIImage(named: "Floor1")
-        mapView.display(image: floorMap!)
+        // Do any additional setup after loading the view, typically from a nib.
+        selectFloorAction(floorButtons[0])
     }
 
     // MARK: Map

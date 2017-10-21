@@ -15,10 +15,15 @@
 		6A0F7D1B1F9A2C7B00191C2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0F7D191F9A2C7B00191C2A /* LaunchScreen.storyboard */; };
 		6A9846721F9AAD10002D5C64 /* FloorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9846711F9AAD0F002D5C64 /* FloorButton.swift */; };
 		6A9846741F9B0676002D5C64 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9846731F9B0676002D5C64 /* Room.swift */; };
+		6A9846771F9B1896002D5C64 /* RoomsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9846761F9B1896002D5C64 /* RoomsManager.swift */; };
+		6A9846791F9B21C4002D5C64 /* RealmRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9846781F9B21C4002D5C64 /* RealmRoom.swift */; };
 		6AFF1C7B1F9A9B7C001467D9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFF1C7A1F9A9B7C001467D9 /* MapView.swift */; };
+		8F22360C5964BB4527008B7F /* Pods_BenderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308B8EEDD6A077A69F43ABF0 /* Pods_BenderApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		308B8EEDD6A077A69F43ABF0 /* Pods_BenderApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BenderApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3415BCE6558FDF9EAF0B9A36 /* Pods-BenderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BenderApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BenderApp/Pods-BenderApp.release.xcconfig"; sourceTree = "<group>"; };
 		6A0F7D0B1F9A2C7B00191C2A /* BenderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BenderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0F7D0E1F9A2C7B00191C2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A0F7D101F9A2C7B00191C2A /* RoutesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesController.swift; sourceTree = "<group>"; };
@@ -29,7 +34,10 @@
 		6A0F7D1C1F9A2C7B00191C2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A9846711F9AAD0F002D5C64 /* FloorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorButton.swift; sourceTree = "<group>"; };
 		6A9846731F9B0676002D5C64 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		6A9846761F9B1896002D5C64 /* RoomsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsManager.swift; sourceTree = "<group>"; };
+		6A9846781F9B21C4002D5C64 /* RealmRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRoom.swift; sourceTree = "<group>"; };
 		6AFF1C7A1F9A9B7C001467D9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = BenderApp/Views/MapView.swift; sourceTree = SOURCE_ROOT; };
+		D4C46EC22A22853427A62E96 /* Pods-BenderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BenderApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BenderApp/Pods-BenderApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F22360C5964BB4527008B7F /* Pods_BenderApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +57,8 @@
 			children = (
 				6A0F7D0D1F9A2C7B00191C2A /* BenderApp */,
 				6A0F7D0C1F9A2C7B00191C2A /* Products */,
+				A03E9F6FCE7F18076A4B8A54 /* Pods */,
+				CE7814793228D4A0E59FAD03 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				6A0F7D0E1F9A2C7B00191C2A /* AppDelegate.swift */,
+				6A9846761F9B1896002D5C64 /* RoomsManager.swift */,
 				6A9846751F9B0C4C002D5C64 /* Models */,
 				6AFF1C7C1F9A9B83001467D9 /* Views */,
 				6AFF1C791F9A9B53001467D9 /* Controllers */,
@@ -78,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				6A9846731F9B0676002D5C64 /* Room.swift */,
+				6A9846781F9B21C4002D5C64 /* RealmRoom.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -100,6 +113,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A03E9F6FCE7F18076A4B8A54 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4C46EC22A22853427A62E96 /* Pods-BenderApp.debug.xcconfig */,
+				3415BCE6558FDF9EAF0B9A36 /* Pods-BenderApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE7814793228D4A0E59FAD03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				308B8EEDD6A077A69F43ABF0 /* Pods_BenderApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,9 +137,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A0F7D1F1F9A2C7B00191C2A /* Build configuration list for PBXNativeTarget "BenderApp" */;
 			buildPhases = (
+				764229B09A7F89FF34471FE0 /* [CP] Check Pods Manifest.lock */,
 				6A0F7D071F9A2C7B00191C2A /* Sources */,
 				6A0F7D081F9A2C7B00191C2A /* Frameworks */,
 				6A0F7D091F9A2C7B00191C2A /* Resources */,
+				622F936189D74756BD2D0916 /* [CP] Embed Pods Frameworks */,
+				5A3D720BBF96757699A34EAF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,11 +200,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5A3D720BBF96757699A34EAF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BenderApp/Pods-BenderApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		622F936189D74756BD2D0916 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BenderApp/Pods-BenderApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BenderApp/Pods-BenderApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		764229B09A7F89FF34471FE0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BenderApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6A0F7D071F9A2C7B00191C2A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A9846791F9B21C4002D5C64 /* RealmRoom.swift in Sources */,
+				6A9846771F9B1896002D5C64 /* RoomsManager.swift in Sources */,
 				6A0F7D131F9A2C7B00191C2A /* MapController.swift in Sources */,
 				6AFF1C7B1F9A9B7C001467D9 /* MapView.swift in Sources */,
 				6A9846741F9B0676002D5C64 /* Room.swift in Sources */,
@@ -312,11 +403,13 @@
 		};
 		6A0F7D201F9A2C7B00191C2A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4C46EC22A22853427A62E96 /* Pods-BenderApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CT884K7983;
 				INFOPLIST_FILE = BenderApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.bestK1ngArthur.BenderApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -327,11 +420,13 @@
 		};
 		6A0F7D211F9A2C7B00191C2A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3415BCE6558FDF9EAF0B9A36 /* Pods-BenderApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CT884K7983;
 				INFOPLIST_FILE = BenderApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.bestK1ngArthur.BenderApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,0 +1,6 @@
+framework module Pods_BenderApp {
+  umbrella header "Pods-BenderApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
