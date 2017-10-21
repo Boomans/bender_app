@@ -43,6 +43,29 @@ class MuseumController: UIViewController, UICollectionViewDelegate, UICollection
         return 2
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        var reusableView = UICollectionReusableView()
+        
+        if kind == UICollectionElementKindSectionHeader {
+            
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: CollectionViewHeader.identifier, for: indexPath) as! CollectionViewHeader
+            
+            switch indexPath.section {
+            case 0:
+                headerView.titleLabel.text = "Коллекции"
+            case 1:
+                headerView.titleLabel.text = "Категории"
+            default:
+                break
+            }
+            
+            reusableView = headerView
+        }
+        
+        return reusableView
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
