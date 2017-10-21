@@ -60,10 +60,10 @@
                                 <color key="backgroundColor" red="0.76862745098039209" green="0.82352941176470584" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCt-AA-zZE">
-                                <rect key="frame" x="325" y="455" width="50" height="163"/>
+                                <rect key="frame" x="317" y="383" width="50" height="219"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7K-6v-NBl" customClass="FloorButton" customModule="BenderApp" customModuleProvider="target">
-                                        <rect key="frame" x="9" y="16" width="33" height="33"/>
+                                        <rect key="frame" x="9" y="72" width="33" height="33"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="33n-KV-jOU"/>
@@ -81,7 +81,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APe-23-N4i" customClass="FloorButton" customModule="BenderApp" customModuleProvider="target">
-                                        <rect key="frame" x="9" y="65" width="33" height="33"/>
+                                        <rect key="frame" x="9" y="121" width="33" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="4Uy-cr-ehr"/>
                                             <constraint firstAttribute="height" constant="33" id="eNU-Lw-uWc"/>
@@ -98,7 +98,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqi-9a-Ihd" customClass="FloorButton" customModule="BenderApp" customModuleProvider="target">
-                                        <rect key="frame" x="9" y="114" width="33" height="33"/>
+                                        <rect key="frame" x="9" y="170" width="33" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="5h2-51-xAB"/>
                                             <constraint firstAttribute="height" constant="33" id="j0M-UD-AWo"/>
@@ -114,18 +114,36 @@
                                             <action selector="selectFloorAction:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="jAH-jb-X7G"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzR-Uo-0uf">
+                                        <rect key="frame" x="5.5" y="16" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="jvD-9F-Amu"/>
+                                            <constraint firstAttribute="height" constant="40" id="q4N-1c-elo"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.78779810669999994" green="0.36706548929999999" blue="0.2701779306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="GeoMarkerIcon"/>
+                                        <connections>
+                                            <action selector="findLocationAction:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="pAE-CN-SR8"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="0Xf-M0-5DL"/>
                                     <constraint firstItem="H7K-6v-NBl" firstAttribute="centerX" secondItem="sCt-AA-zZE" secondAttribute="centerX" id="5Y9-dJ-aEU"/>
                                     <constraint firstItem="APe-23-N4i" firstAttribute="top" secondItem="H7K-6v-NBl" secondAttribute="bottom" constant="16" id="EjE-Jj-9xp"/>
-                                    <constraint firstItem="H7K-6v-NBl" firstAttribute="top" secondItem="sCt-AA-zZE" secondAttribute="top" constant="16" id="PEc-o2-kn9"/>
+                                    <constraint firstItem="HzR-Uo-0uf" firstAttribute="centerX" secondItem="sCt-AA-zZE" secondAttribute="centerX" id="NlF-dV-HRX"/>
+                                    <constraint firstItem="HzR-Uo-0uf" firstAttribute="top" secondItem="sCt-AA-zZE" secondAttribute="top" constant="16" id="QNG-fd-Zig"/>
                                     <constraint firstAttribute="trailing" secondItem="vqi-9a-Ihd" secondAttribute="trailing" constant="8" id="Uav-ce-7Vh"/>
+                                    <constraint firstItem="H7K-6v-NBl" firstAttribute="top" secondItem="HzR-Uo-0uf" secondAttribute="bottom" constant="16" id="W5d-Kq-qxL"/>
                                     <constraint firstItem="vqi-9a-Ihd" firstAttribute="centerX" secondItem="sCt-AA-zZE" secondAttribute="centerX" id="YLv-bG-TaC"/>
                                     <constraint firstAttribute="bottom" secondItem="vqi-9a-Ihd" secondAttribute="bottom" constant="16" id="o5Y-gD-S9Q"/>
                                     <constraint firstItem="APe-23-N4i" firstAttribute="centerX" secondItem="sCt-AA-zZE" secondAttribute="centerX" id="rKh-Yq-Zvc"/>
                                     <constraint firstItem="vqi-9a-Ihd" firstAttribute="top" secondItem="APe-23-N4i" secondAttribute="bottom" constant="16" id="rOW-Pt-83b"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4AL-TH-3xt">
                                 <rect key="frame" x="0.0" y="20" width="375" height="50"/>
@@ -146,7 +164,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="1" alpha="0.65000000000000002" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="V0W-Dx-IX4" firstAttribute="leading" secondItem="VJf-BH-TgX" secondAttribute="leading" constant="8" id="7cm-nL-Pb1"/>
                                             <constraint firstAttribute="trailing" secondItem="egh-Xo-HLp" secondAttribute="trailing" constant="10" id="QaM-Qw-pC7"/>
@@ -171,13 +189,13 @@
                         <constraints>
                             <constraint firstItem="4AL-TH-3xt" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="1Yu-eU-hAy"/>
                             <constraint firstItem="4AL-TH-3xt" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="M3B-7e-RnL"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="sCt-AA-zZE" secondAttribute="bottom" id="TFB-0a-78z"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="sCt-AA-zZE" secondAttribute="bottom" constant="16" id="TFB-0a-78z"/>
                             <constraint firstItem="1C9-td-dKj" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="WHy-oO-CWv"/>
                             <constraint firstItem="1C9-td-dKj" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="aCq-8I-eEC"/>
                             <constraint firstItem="1C9-td-dKj" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="dHa-ku-1xb"/>
                             <constraint firstItem="1C9-td-dKj" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="fsT-C1-201"/>
                             <constraint firstItem="4AL-TH-3xt" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="m4Z-fp-6mh"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="sCt-AA-zZE" secondAttribute="trailing" id="otI-uT-Roa"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="sCt-AA-zZE" secondAttribute="trailing" constant="8" id="otI-uT-Roa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
@@ -283,6 +301,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="GeoMarkerIcon" width="25" height="25"/>
         <image name="MapIcon" width="25" height="25"/>
         <image name="MuseumIcon" width="25" height="25"/>
         <image name="TicketIcon" width="25" height="25"/>

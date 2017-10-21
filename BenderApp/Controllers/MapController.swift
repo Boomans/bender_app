@@ -21,8 +21,10 @@ class MapController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         // Do any additional setup after loading the view, typically from a nib.
+        mapView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
+        
         selectFloorAction(floorButtons[currentFloor-1])
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapOnMapAction(_:)))
@@ -34,7 +36,7 @@ class MapController: UIViewController {
         super.viewDidAppear(animated)
         
         //showRoom(id: 11, atFloor: 1)
-        //showRoute(Route(path: [11, 12, 13, 15, 16]))
+        //showRoute(Route(path: [11, 12, 13, 14, 15, 16]))
     }
 
     // MARK: Map
@@ -129,5 +131,12 @@ class MapController: UIViewController {
     
     @objc func tapOnMapAction(_ sender: UITapGestureRecognizer) {
         print("Tap in \(sender.location(in: mapView.zoomView))")
+    }
+    
+    @IBAction func findLocationAction(_ sender: Any) {
+        
+        if let room = RoomsManager.shared.getRoom(id: 13) {
+            mapView.zoom(to: room.frame, animated: true)
+        }
     }
 }
