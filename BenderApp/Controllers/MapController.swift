@@ -46,6 +46,16 @@ class MapController: UIViewController {
         mapView.display(image: map)
     }
     
+    func showPoint(_ point: CGPoint) {
+        
+        let radius: CGFloat = 5
+        
+        let view = UIView(frame: CGRect(origin: point, size: CGSize(width: 2*radius, height: 2*radius)))
+        view.layer.cornerRadius = radius
+        view.backgroundColor = UIColor(displayP3Red: 193/255, green: 65/255, blue: 83/255, alpha: 1)
+        mapView.zoomView?.addSubview(view)
+    }
+    
     func showRoom(id: Int, atFloor floor: Int) {
         
         let room = RoomsManager.shared.getRoom(id: id)
@@ -136,6 +146,7 @@ class MapController: UIViewController {
     @IBAction func findLocationAction(_ sender: Any) {
         
         if let room = RoomsManager.shared.getRoom(id: 13) {
+            showPoint(room.center)
             mapView.zoom(to: room.frame, animated: true)
         }
     }
