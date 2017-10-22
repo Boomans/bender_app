@@ -562,7 +562,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Gju-bC-BlQ">
+                                                <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Gju-bC-BlQ">
                                                     <rect key="frame" x="16" y="116" width="54" height="27"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6J-cg-afH">
@@ -634,7 +634,9 @@
                         <outlet property="descriptionLabel" destination="F3E-wV-k02" id="HdQ-2E-3Ut"/>
                         <outlet property="imageView" destination="IBh-Ao-zN7" id="Pm0-1M-E2X"/>
                         <outlet property="materialLabel" destination="g6J-cg-afH" id="huQ-a1-KQF"/>
+                        <outlet property="materialView" destination="Gju-bC-BlQ" id="esI-dF-pFO"/>
                         <outlet property="technicLabel" destination="Cfn-vo-d8K" id="12M-bB-gqy"/>
+                        <outlet property="technicView" destination="ObK-Hs-xtR" id="Ooc-r7-QRw"/>
                         <outlet property="titleLabel" destination="apL-k7-kbM" id="oe9-mS-shh"/>
                     </connections>
                 </tableViewController>

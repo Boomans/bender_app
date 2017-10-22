@@ -19,6 +19,9 @@ class PictureController: UITableViewController {
     @IBOutlet weak var materialLabel: UILabel!
     @IBOutlet weak var technicLabel: UILabel!
     
+    @IBOutlet weak var materialView: UIView!
+    @IBOutlet weak var technicView: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,17 +46,17 @@ class PictureController: UITableViewController {
             }
             
             if let material = picture.material {
-                self.materialLabel.isHidden = false
+                self.materialView.isHidden = false
                 self.materialLabel.text = material
             } else {
-                self.materialLabel.isHidden = true
+                self.materialView.isHidden = true
             }
         
             if let technic = picture.technic {
-                self.technicLabel.isHidden = false
+                self.technicView.isHidden = false
                 self.technicLabel.text = technic
             } else {
-                self.technicLabel.isHidden = true
+                self.technicView.isHidden = true
             }
             
         }, failure: nil)
