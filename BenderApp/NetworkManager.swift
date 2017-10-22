@@ -42,6 +42,37 @@ class NetworkManager {
         }
     }
     
+    typealias Room = (id: Int, congestion: Float)
+    
+    func getAllRooms(success: (([Room]) -> Void)? = nil, failure: ((Error?) -> Void)? = nil) {
+        
+        let parameters = ["floor": 1]
+        
+        Alamofire.request("http://77.244.216.138:3000/get-rooms/", method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { response in
+            
+            if let json = response.result.value {
+                if let dict = json as? Dictionary<String, Any>, let rooms = dict["data"] as? [Dictionary<String, Any>] {
+                    
+                    var finalRooms: [Room] = []
+                    for room in rooms {
+                        let roomID = room["roomId"] as? String
+                        let congestion = room["load"] as? Float
+                        
+                        if let roomID = roomID, let digitRoomID = Int(roomID), let congestion = congestion {
+                            finalRooms.append((id: digitRoomID, congestion: congestion))
+                        }
+                    }
+    
+                    success?(finalRooms)
+                } else {
+                    failure?(nil)
+                }
+            } else {
+                failure?(nil)
+            }
+        }
+    }
+    
     typealias Collection = (title: String, imageURL: URL)
     
     func getCollections(success: (([Collection]) -> Void)? = nil, failure: ((Error?) -> Void)? = nil) {

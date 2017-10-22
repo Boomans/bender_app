@@ -158,4 +158,37 @@ class MapController: UIViewController {
             mapView.zoom(to: room.frame, animated: true)
         }
     }
+    
+    @IBAction func switchModeAction(_ sender: UISwitch) {
+        
+        if sender.isOn {
+         
+            NetworkManager.shared.getAllRooms(success: { (rooms) in
+                for rawRoom in rooms {
+                    let room = RoomsManager.shared.getRoom(id: rawRoom.id)
+                    
+                    if let room = room, self.currentFloor == 1 {
+                        let roomView = UIView(frame: room.frame)
+                        roomView.backgroundColor = UIColor(displayP3Red: CGFloat(rawRoom.congestion),
+                                                           green: CGFloat(1 - rawRoom.congestion),
+                                                           blue: 0.3,
+                                                           alpha: 1.0)
+                        
+                        self.mapView.zoomView?.addSubview(roomView)
+                        print("Show room \(rawRoom.id) \(room.frame)")
+                    } else {
+                        print("Can't find room \(rawRoom.id)")
+                    }
+                }
+            }, failure: nil)
+            
+        } else {
+            
+            if let subviews = mapView.zoomView?.subviews {
+                for view in subviews {
+                    view.removeFromSuperview()
+                }
+            }
+        }
+    }
 }

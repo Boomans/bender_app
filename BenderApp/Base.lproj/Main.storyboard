@@ -313,9 +313,18 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4Sx-RI-hw0">
+                                        <rect key="frame" x="310" y="16" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="switchModeAction:" destination="8rJ-Kc-sve" eventType="valueChanged" id="vzS-zg-5Yf"/>
+                                        </connections>
+                                    </switch>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4Sx-RI-hw0" secondAttribute="trailing" constant="16" id="4Pb-Pf-Yuo"/>
                                     <constraint firstItem="VJf-BH-TgX" firstAttribute="leading" secondItem="4AL-TH-3xt" secondAttribute="leading" constant="8" id="GME-8w-hbz"/>
+                                    <constraint firstItem="4Sx-RI-hw0" firstAttribute="top" secondItem="4AL-TH-3xt" secondAttribute="top" constant="16" id="LHb-FL-ZGL"/>
                                     <constraint firstAttribute="height" constant="50" id="dSR-NT-g9n"/>
                                     <constraint firstItem="VJf-BH-TgX" firstAttribute="top" secondItem="4AL-TH-3xt" secondAttribute="top" constant="8" id="xpL-QK-0tr"/>
                                 </constraints>
