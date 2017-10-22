@@ -100,4 +100,36 @@ class NetworkManager {
             }
         }
     }
+    
+    func getPicture(id: String, success: ((PictureInfo) -> Void)? = nil, failure: ((Error?) -> Void)? = nil) {
+        
+        Alamofire.request("http://77.244.216.138:3000/static/info.json", method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { response in
+            
+            if let json = response.result.value, let responses = json as? [Dictionary<String, Any>] {
+    
+                for response in responses {
+                    let about = response["about"] as! Dictionary<String, Any>
+                    if let currentID = about["Инвентарный_номер"] as? String, currentID == id {
+                        
+                        let pictureInfo = PictureInfo(dictionary: about)
+
+                        var roomString = response["room"] as? String
+                        if var roomString = roomString {
+                            roomString = roomString.trimmingCharacters(in: CharacterSet.decimalDigits.inverted)
+                            pictureInfo.room = Int(roomString)
+                        }
+                        
+                        let urlString = response["img"] as! String
+                        pictureInfo.imageURL = URL(string: urlString)!
+                        
+                        success?(pictureInfo)
+                    }
+                }
+                
+                failure?(nil)
+            } else {
+                failure?(nil)
+            }
+        }
+    }
 }

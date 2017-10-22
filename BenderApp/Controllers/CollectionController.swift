@@ -27,6 +27,17 @@ class CollectionController: UIViewController, UICollectionViewDelegate, UICollec
         }, failure: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CollectionToPicture", sender is CollectionCell {
+            let sender = sender as! CollectionCell
+            
+            let indexPath = self.collectionView.indexPath(for: sender)
+            let picture = pictures[(indexPath?.row)!]
+            
+            (segue.destination as! PictureController).loadPictureInfo(id: picture.id)
+        }
+    }
+    
     // MARK: Collection view
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
