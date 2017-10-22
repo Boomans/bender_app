@@ -38,6 +38,15 @@ class MapController: UIViewController {
         //showRoom(id: 11, atFloor: 1)
         //showRoute(Route(path: [11, 12, 13, 14, 15, 16]))
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        if let subviews = mapView.zoomView?.subviews {
+            for view in subviews {
+                view.removeFromSuperview()
+            }
+        }
+    }
 
     // MARK: Map
     
@@ -171,7 +180,7 @@ class MapController: UIViewController {
                         let roomView = UIView(frame: room.frame)
                         roomView.backgroundColor = UIColor(displayP3Red: CGFloat(rawRoom.congestion),
                                                            green: CGFloat(1 - rawRoom.congestion),
-                                                           blue: 0.3,
+                                                           blue: 1.0,
                                                            alpha: 1.0)
                         
                         self.mapView.zoomView?.addSubview(roomView)

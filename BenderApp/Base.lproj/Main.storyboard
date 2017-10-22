@@ -99,20 +99,20 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="Ogm-bx-mjT" customClass="CategoryCell" customModule="BenderApp" customModuleProvider="target">
-                                        <rect key="frame" x="190" y="82.5" width="175" height="175"/>
+                                        <rect key="frame" x="190" y="45" width="175" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="175" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фарфор" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="qk0-uG-msx">
-                                                    <rect key="frame" x="20" y="145.5" width="135" height="9.5"/>
+                                                    <rect key="frame" x="20" y="168" width="135" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dR5-KV-A97">
-                                                    <rect key="frame" x="37" y="37.5" width="100" height="100"/>
+                                                    <rect key="frame" x="37" y="60" width="100" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="9tg-l7-4Be"/>
                                                         <constraint firstAttribute="height" constant="100" id="xRL-s3-Foe"/>
@@ -123,8 +123,9 @@
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="dR5-KV-A97" firstAttribute="centerY" secondItem="Ogm-bx-mjT" secondAttribute="centerY" id="0Di-LS-tRu"/>
+                                            <constraint firstItem="dR5-KV-A97" firstAttribute="centerY" secondItem="Ogm-bx-mjT" secondAttribute="centerY" constant="-15" id="0Di-LS-tRu"/>
                                             <constraint firstItem="qk0-uG-msx" firstAttribute="leading" secondItem="Ogm-bx-mjT" secondAttribute="leadingMargin" constant="12" id="BHd-ON-xqp"/>
                                             <constraint firstItem="qk0-uG-msx" firstAttribute="top" secondItem="dR5-KV-A97" secondAttribute="bottom" constant="8" id="Drc-WS-4RG"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="qk0-uG-msx" secondAttribute="trailing" constant="12" id="XBn-2O-qc7"/>
@@ -132,7 +133,10 @@
                                             <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="qk0-uG-msx" secondAttribute="bottom" constant="12" id="wsJ-Jy-eil"/>
                                             <constraint firstItem="dR5-KV-A97" firstAttribute="centerX" secondItem="Ogm-bx-mjT" secondAttribute="centerX" id="zFf-Nv-6Wd"/>
                                         </constraints>
-                                        <size key="customSize" width="175" height="175"/>
+                                        <size key="customSize" width="175" height="250"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="19"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="imageView" destination="dR5-KV-A97" id="Nt6-Fi-Lof"/>
                                             <outlet property="titleLabel" destination="qk0-uG-msx" id="DJ9-FY-l9X"/>
