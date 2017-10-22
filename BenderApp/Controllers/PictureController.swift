@@ -22,6 +22,7 @@ class PictureController: UITableViewController {
     @IBOutlet weak var materialView: UIView!
     @IBOutlet weak var technicView: UIView!
     
+    var pictureInfo = PictureInfo(dictionary: [:])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,8 @@ class PictureController: UITableViewController {
     func loadPictureInfo(id: String) {
 
         NetworkManager.shared.getPicture(id: id, success: { (picture) in
+            
+            self.pictureInfo = picture
             
             self.imageView.af_setImage(withURL: picture.imageURL!)
             self.titleLabel.text = picture.title
@@ -62,10 +65,27 @@ class PictureController: UITableViewController {
         }, failure: nil)
     }
     
-    @IBAction func showRouteAction(_ sender: Any) {
+    @IBAction func showRouteAction(_ sender: UIButton) {
         
         if let tabBarController = self.tabBarController {
-            tabBarController.selectedIndex = 1
+            
+            if let viewControllers = tabBarController.viewControllers {
+                let vc = viewControllers[1] as! MapController
+                
+                NetworkManager.shared.getRoute(from: 13, to: self.pictureInfo.room!, success: { (route) in
+                    
+                    DispatchQueue.main.async {
+                        vc.showRoute(route)
+                        tabBarController.selectedIndex = 1
+                    }
+                    
+                }, failure: { (error) in
+                    
+                    DispatchQueue.main.async {
+                        sender.isEnabled = false
+                    }
+                })
+            }
         }
     }
 }

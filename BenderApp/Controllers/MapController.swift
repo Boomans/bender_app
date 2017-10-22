@@ -80,6 +80,7 @@ class MapController: UIViewController {
         let routeLine = UIBezierPath()
         
         var lastRoom: Room?
+        var lastPoint: CGPoint?
         for id in route.path {
             let room = RoomsManager.shared.getRoom(id: id)
 
@@ -96,16 +97,20 @@ class MapController: UIViewController {
                     routeLine.addLine(to: point)
                     routeLine.addArc(withCenter: point, radius: 0.5, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: true)
                     
+                    lastPoint = point
                 } else {
                     continue
                 }
             } else {
                 lastRoom = room
                 routeLine.move(to:(room?.center ?? CGPoint(x: 0, y: 0)))
+                routeLine.addArc(withCenter: (room?.center ?? CGPoint(x: 0, y: 0)), radius: 2, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: true)
             }
             
             lastRoom = room
         }
+        
+        routeLine.addArc(withCenter: lastPoint!, radius: 2, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: true)
 
         // Design line in layer
         let shapeLayer = CAShapeLayer()
@@ -115,7 +120,10 @@ class MapController: UIViewController {
         shapeLayer.lineWidth = 3.0
         
         // Add layer with route line
-        mapView.zoomView?.layer.addSublayer(shapeLayer)
+        if let mapView = mapView {
+            mapView.zoomView!.layer.addSublayer(shapeLayer)
+            mapView.zoom(to: shapeLayer.frame, animated: true)
+        }
     }
     
     // MARK: Actions
@@ -145,7 +153,7 @@ class MapController: UIViewController {
     
     @IBAction func findLocationAction(_ sender: Any) {
         
-        if let room = RoomsManager.shared.getRoom(id: 13) {
+        if let room = RoomsManager.shared.getRoom(id: RoomsManager.shared.currentRoom) {
             showPoint(room.center)
             mapView.zoom(to: room.frame, animated: true)
         }

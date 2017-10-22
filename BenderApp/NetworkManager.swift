@@ -26,10 +26,15 @@ class NetworkManager {
                     
                     var path: [Int] = []
                     for room in rooms {
-                        path.append(Int((room["roomId"] as? Int) ?? 0))
+                        let roomID = room["roomId"] as? String
+                        if let roomID = roomID, let number = Int(roomID) {
+                            path.append(number)
+                        }
                     }
                     
                     success?(Route(path: path))
+                } else {
+                    failure?(nil)
                 }
             } else {
                 failure?(nil)
