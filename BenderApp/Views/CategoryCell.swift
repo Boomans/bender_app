@@ -1,16 +1,16 @@
 //
-//  CategoryCollectionCell.swift
+//  CategoryCell.swift
 //  BenderApp
 //
-//  Created by a.belkov on 21/10/2017.
+//  Created by bestK1ng on 22/10/2017.
 //  Copyright © 2017 bestK1ng. All rights reserved.
 //
 
 import UIKit
 
-class CategoryCollectionCell: UICollectionViewCell {
-
-    static let identifier = "CategoryCollectionCell"
+class CategoryCell: UICollectionViewCell {
+    
+    static let identifier = "CategoryCell"
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!

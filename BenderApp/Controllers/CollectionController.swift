@@ -27,9 +27,17 @@ class CollectionController: UIViewController, UICollectionViewDelegate, UICollec
         }, failure: nil)
     }
     
+    func loadPicturesForCategory(title: String) {
+        
+        NetworkManager.shared.getPicturesForCategory(title: title, success: { (pictures) in
+            self.pictures = pictures
+            self.collectionView.reloadData()
+        }, failure: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "CollectionToPicture", sender is CollectionCell {
-            let sender = sender as! CollectionCell
+        if segue.identifier == "CollectionToPicture", sender is PictureCell {
+            let sender = sender as! PictureCell
             
             let indexPath = self.collectionView.indexPath(for: sender)
             let picture = pictures[(indexPath?.row)!]
@@ -50,7 +58,7 @@ class CollectionController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionCell.identifier, for: indexPath) as! CollectionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PictureCell.identifier, for: indexPath) as! PictureCell
         
         cell.imageView.image = nil
         cell.imageView.af_setImage(withURL: pictures[indexPath.row].imageURL)
